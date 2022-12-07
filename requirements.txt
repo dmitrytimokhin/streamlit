@@ -1,4 +1,5 @@
 scikit-learn
+pandasql
 eli5
 seaborn
 shap
