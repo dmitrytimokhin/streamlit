@@ -3,3 +3,4 @@ shap
 catboost
 lightgbm
 xgboost
+pdpbox==0.2.1
