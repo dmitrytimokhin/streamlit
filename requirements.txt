@@ -1,4 +1,6 @@
 scikit-learn
+patsy
+statsmodels
 sklearn
 ipywidgets
 pandasql
