@@ -1,5 +1,6 @@
 scikit-learn
 ipywidgets
+patsy
 pandasql
 IPython
 eli5
