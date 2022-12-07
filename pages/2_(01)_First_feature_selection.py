@@ -23,10 +23,12 @@ st.sidebar.header("Обработка и первичный отбор факт�
 useful_columns = pickle.load(open('./output/columns_after_eda.sav','rb'))
 useful_columns.append('выбрать')
 
+@st.cache
 def load_dataset(data_link):
     dataset = pd.read_csv(data_link)
     return dataset
 
+@st.cache
 def user_params(need_columns):
 
     num_columns = st.sidebar.multiselect("Числовые переменные", need_columns)
@@ -68,12 +70,12 @@ if target=='выбрать':
     st.stop()
 st.success("Все переменные обозначены")
 
-link_1 = st.text_input('Введите ссылку на датасет')
-if link_1 == '':
+link = st.text_input('Введите ссылку на датасет')
+if link == '':
     st.write('Датасет не загружен')
     st.stop()
 else:
-    sample = load_dataset(link_1)
+    sample = load_dataset(link)
     st.write('Датасет загружен')
 
 if st.button('Старт обучения'):

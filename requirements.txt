@@ -1,8 +1,6 @@
 scikit-learn
 sklearn
-statsmodels
 ipywidgets
-patsy
 pandasql
 IPython
 eli5
@@ -11,5 +9,4 @@ shap
 catboost
 lightgbm
 xgboost
-matplotlib
 PDPbox-0.2.0.tar.gz

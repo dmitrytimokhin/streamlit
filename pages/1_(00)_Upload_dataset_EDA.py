@@ -14,6 +14,7 @@ st.markdown("# Загрузка данных и Exploratory Data Analysis (EDA)"
 st.markdown("### 👈 Необходимо задать параметры для анализа данных")
 st.sidebar.header("Загрузка данных и EDA")
 
+@st.cache
 def user_params():
     types = ['bin','reg','выбрать']
     default_ind = types.index('выбрать')
@@ -37,6 +38,7 @@ def user_params():
 
 params_eda = user_params()
 
+@st.cache
 def load_dataset(data_link):
     dataset = pd.read_csv(data_link)
     return dataset
@@ -44,12 +46,12 @@ def load_dataset(data_link):
 use_columns = {'use':None,
                 'target':None}
 
-link_0 = st.text_input('Введите ссылку на датасет')
-if link_0 == '':
+link = st.text_input('Введите ссылку на датасет')
+if link == '':
     st.write('Датасет не загружен')
     st.stop()
 else:
-    sample = load_dataset(link_0)
+    sample = load_dataset(link)
     st.write('Датасет загружен')
 
 ##if st.button('Старт обучения'):

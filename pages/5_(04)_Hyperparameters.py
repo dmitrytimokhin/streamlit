@@ -26,10 +26,12 @@ st.sidebar.header("Optuna параметры")
 useful_columns = pickle.load(open('./output/columns_after_deep_selection.sav','rb'))
 target = useful_columns['target']
 
+@st.cache
 def load_dataset(data_link):
     dataset = pd.read_csv(data_link)
     return dataset
 
+@st.cache
 def user_params(need_columns):
 
     test_size = st.sidebar.slider('Отношение разбиения трейн-тест', 0.1,1.0,0.3)
@@ -94,12 +96,12 @@ else:
 st.write('Количество факторов: ', len(features))
 st.write('Отобранные факторы: ', features)
 
-link_4 = st.text_input('Введите ссылку на датасет')
-if link_4 == '':
+link = st.text_input('Введите ссылку на датасет')
+if link == '':
     st.write('Датасет не загружен')
     st.stop()
 else:
-    sample = load_dataset(link_4)
+    sample = load_dataset(link)
     st.write('Датасет загружен')
 
 if st.button('Старт обучения'):

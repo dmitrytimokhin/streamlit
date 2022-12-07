@@ -23,10 +23,12 @@ num_columns = useful_columns['num_columns']
 cat_columns = useful_columns['cat_columns']
 target = useful_columns['target']
 
+@st.cache
 def load_dataset(data_link):
     dataset = pd.read_csv(data_link)
     return dataset
 
+@st.cache
 def user_params(need_columns):
 
     test_size = st.sidebar.slider('Отношение разбиения трейн-тест', 0.1,1.0,0.3)
@@ -39,12 +41,12 @@ def user_params(need_columns):
 
 train_test_params = user_params(useful_columns)
 
-link_2 = st.text_input('Введите ссылку на датасет')
-if link_2 == '':
+link = st.text_input('Введите ссылку на датасет')
+if link == '':
     st.write('Датасет не загружен')
     st.stop()
 else:
-    sample = load_dataset(link_2)
+    sample = load_dataset(link)
     st.write('Датасет загружен')
 
 if st.button('Старт обучения'):

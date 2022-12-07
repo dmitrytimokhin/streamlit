@@ -29,10 +29,12 @@ prep_pipe = pickle.load(open('./final_results/prep_pipe_final.sav','rb'))
 
 model = pickle.load(open('./final_results/model_final.sav','rb'))
 
+@st.cache
 def load_dataset(data_link):
     dataset = pd.read_csv(data_link)
     return dataset
 
+@st.cache
 def user_params(features):
 
     test_size = st.sidebar.slider('Отношение разбиения трейн-тест', 0.1,1.0,0.3)
@@ -60,12 +62,12 @@ train_test_params, report_params = user_params(features)
 st.write('Количество факторов: ', len(features))
 st.write('Отобранные факторы: ', features)
 
-link_6 = st.text_input('Введите ссылку на датасет')
-if link_6 == '':
+link = st.text_input('Введите ссылку на датасет')
+if link == '':
     st.write('Датасет не загружен')
     st.stop()
 else:
-    sample = load_dataset(link_6)
+    sample = load_dataset(link)
     st.write('Датасет загружен')
 
 if st.button('Старт обучения'):
