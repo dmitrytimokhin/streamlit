@@ -1,3 +1,4 @@
+pip --upgrade
 sklearn
 scikit-learn
 shap
@@ -5,4 +6,4 @@ catboost
 lightgbm
 category-encoders
 optuna
-pdpbox==0.2.0
+pdpbox
