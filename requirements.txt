@@ -1,7 +1,10 @@
+pip --upgrade
+wheel --upgrade
+setuptools --upgrade
 scikit-learn
 shap
 catboost
 lightgbm
 xgboost
-matplotlib
-pdpbox
+matplotlib==3.1.1
+pdpbox==0.20.0
