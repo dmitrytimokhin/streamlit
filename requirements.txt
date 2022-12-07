@@ -1,5 +1,5 @@
-pip
 scikit-learn
+seaborn
 shap
 catboost
 lightgbm
