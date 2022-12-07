@@ -1,3 +1,5 @@
+pip
+setuptools
 scikit-learn
 shap
 catboost
