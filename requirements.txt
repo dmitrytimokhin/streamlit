@@ -1,4 +1,5 @@
 scikit-learn
+IProgress
 pandasql
 IPython
 eli5
