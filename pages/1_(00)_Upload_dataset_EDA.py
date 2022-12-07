@@ -14,7 +14,6 @@ st.markdown("# Загрузка данных и Exploratory Data Analysis (EDA)"
 st.markdown("### 👈 Необходимо задать параметры для анализа данных")
 st.sidebar.header("Загрузка данных и EDA")
 
-@st.cache
 def user_params():
     types = ['bin','reg','выбрать']
     default_ind = types.index('выбрать')

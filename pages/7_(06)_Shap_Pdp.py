@@ -34,7 +34,6 @@ def load_dataset(data_link):
     dataset = pd.read_csv(data_link)
     return dataset
 
-@st.cache
 def user_params(features):
 
     test_size = st.sidebar.slider('Отношение разбиения трейн-тест', 0.1,1.0,0.3)

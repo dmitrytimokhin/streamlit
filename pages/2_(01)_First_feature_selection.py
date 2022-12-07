@@ -28,7 +28,6 @@ def load_dataset(data_link):
     dataset = pd.read_csv(data_link)
     return dataset
 
-@st.cache
 def user_params(need_columns):
 
     num_columns = st.sidebar.multiselect("Числовые переменные", need_columns)
