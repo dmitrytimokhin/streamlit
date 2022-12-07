@@ -67,16 +67,18 @@ def user_params(need_columns):
     'reg_lambda_max':reg_lambda_max,
     'trials':trials}
 
+    n_splits = st.sidebar.slider('Количество фолдов', 2,10,3)
+
     type_selection = ['forward','deep backward','выбрать']
     ind = type_selection.index('выбрать')
     col_selected = st.sidebar.selectbox("Тип задачи", type_selection, index=ind)
 
-    return train_test_params, col_selected, optuna_params
+    return train_test_params, col_selected, optuna_params, n_splits
 
-train_test_params, col_selected, optuna_params = user_params(useful_columns)
+train_test_params, col_selected, optuna_params, n_splits = user_params(useful_columns)
 
 strat = StratifiedKFold(
-    n_splits=5,
+    n_splits=n_splits,
     shuffle=True,
     random_state=train_test_params['random_state'])
 

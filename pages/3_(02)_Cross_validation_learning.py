@@ -28,17 +28,19 @@ def load_dataset(data_link):
     dataset = pd.read_csv(data_link)
     return dataset
 
-def user_params(need_columns):
+def user_params():
 
     test_size = st.sidebar.slider('Отношение разбиения трейн-тест', 0.1,1.0,0.3)
     random_state = st.sidebar.slider('Фактор фиксации решения', 1,100,42)
 
+    n_splits = st.sidebar.slider('Количество фолдов', 2,10,3)
+
     train_test_params = {'test_size':test_size,
                         'random_state':random_state}
 
-    return train_test_params
+    return train_test_params, n_splits
 
-train_test_params = user_params(useful_columns)
+train_test_params, n_splits = user_params()
 
 link = st.text_input('Введите ссылку на датасет')
 if link == '':
@@ -104,9 +106,9 @@ if st.button('Старт обучения'):
 
     # задаем стратегию проверки
     strat = StratifiedKFold(
-        n_splits=5,
+        n_splits=n_splits,
         shuffle=True,
-        random_state=42)
+        random_state=train_test_params['random_state'])
 
     model = AutoTrees(
         main_estimator=lgb_model,

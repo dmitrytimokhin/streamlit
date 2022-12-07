@@ -36,11 +36,13 @@ def user_params(need_columns):
     train_test_params = {'test_size':test_size,
                         'random_state':random_state}
 
+    n_splits = st.sidebar.slider('Количество фолдов', 2,10,3)
+
     tol = st.sidebar.slider('Порог разницы в значении метрики при Backward Selection', 0.001,0.1,0.01)
 
-    return train_test_params, tol
+    return train_test_params, tol, n_splits
 
-train_test_params, tol = user_params(useful_columns)
+train_test_params, tol, n_splits = user_params(useful_columns)
 
 link = st.text_input('Введите ссылку на датасет')
 if link == '':
@@ -109,9 +111,9 @@ if st.button('Старт обучения'):
 
     # задаем стратегию проверки
     strat = StratifiedKFold(
-        n_splits=5,
+        n_splits=n_splits,
         shuffle=True,
-        random_state=42)
+        random_state=train_test_params['random_state'])
 
     selection = AutoSelection(base_pipe=base_pipe,
                               num_columns=num_columns,

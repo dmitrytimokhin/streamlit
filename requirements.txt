@@ -11,4 +11,5 @@ shap
 catboost
 lightgbm
 xgboost
+optuna
 PDPbox-0.2.0.tar.gz
