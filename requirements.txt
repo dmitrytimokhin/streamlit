@@ -1,4 +1,5 @@
 scikit-learn
+eli5
 seaborn
 shap
 catboost
