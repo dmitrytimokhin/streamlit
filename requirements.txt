@@ -3,5 +3,7 @@ scikit-learn
 shap
 catboost
 lightgbm
+xgboost
 category-encoders
 optuna
+pickle
