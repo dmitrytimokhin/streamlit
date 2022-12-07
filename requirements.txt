@@ -8,4 +8,3 @@ lightgbm==3.3.2
 xgboost==1.5.2
 category-encoders
 optuna
-pickle
