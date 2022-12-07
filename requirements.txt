@@ -1,3 +1,4 @@
+streamlit
 sklearn
 scikit-learn
 shap
