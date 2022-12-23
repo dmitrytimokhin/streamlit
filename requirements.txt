@@ -8,6 +8,7 @@ IPython
 eli5
 seaborn
 shap
+PyQt5
 catboost
 lightgbm
 xgboost
