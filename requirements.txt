@@ -1,2 +1,4 @@
 autobinary-1.0.10.tar.gz
 numpy==1.23.1
+ipywidgets
+IPython
