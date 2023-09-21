@@ -2,4 +2,5 @@ ipywidgets
 IPython
 jinja2==3.0.0
 autobinary-1.0.10.tar.gz
+numpy==1.25
 optuna
