@@ -1,6 +1,6 @@
 streamlit==1.15.1
+jinja2==3.0.0
 ipywidgets
 IPython
 autobinary-1.0.10.tar.gz
-jinja2==3.0.1
 optuna
