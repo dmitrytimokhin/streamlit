@@ -1,2 +1,1 @@
-# streamlit
-Show our autobinary framework on streamlit
+# Проект автоматизации решения ML бизнес-задач, основанный на библиотеке Autobinary и реализованный платформой streamlit
