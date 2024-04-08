@@ -29,3 +29,9 @@ st.markdown(
     - Ссылка на данные крушения Титаника: https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv
 """
 )
+
+import stramlit
+import autobinary
+st.write()
+st.write('streamlit version:',streamlit.__version__)
+st.write('autobinary version:', autobinary.__version__)
