@@ -32,5 +32,5 @@ st.markdown(
 )
 
 st.write()
-st.write('streamlit version:',streamlit.__version__)
-st.write('autobinary version:', autobinary.__version__)
+st.write('streamlit version:',st.__version__)
+st.write('autobinary version:', ab.__version__)
