@@ -2,3 +2,4 @@ ipywidgets
 IPython
 autobinary-1.0.5.tar.gz
 optuna
+numpy==1.23.3
