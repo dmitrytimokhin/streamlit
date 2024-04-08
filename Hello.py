@@ -1,4 +1,5 @@
 import streamlit as st
+import autobinary as ab
 
 st.set_page_config(
     page_title="Привет, пользователь",
@@ -30,8 +31,6 @@ st.markdown(
 """
 )
 
-import stramlit
-import autobinary
 st.write()
 st.write('streamlit version:',streamlit.__version__)
 st.write('autobinary version:', autobinary.__version__)
